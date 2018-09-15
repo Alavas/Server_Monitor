@@ -17,4 +17,17 @@ body {
 .app {
   height: 100%; }
 
+.serverlist {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%; }
+
+.altbadge {
+  float: right;
+  margin-left: 5px !important; }
+
+.collapsible-body {
+  padding: 0.75rem !important; }
+
 /*# sourceMappingURL=index.css.map */
