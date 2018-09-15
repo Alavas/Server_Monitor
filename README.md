@@ -1,5 +1,6 @@
 Monitor for server and running services on demo machines. Expects to be fed a JSON file in the following format:
 
+```json
 {
   "ServerName": {
     "Operational": false,
@@ -32,5 +33,6 @@ Monitor for server and running services on demo machines. Expects to be fed a JS
     ]
   }
 }
+```
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
