@@ -1,5 +1,5 @@
 export const loadData = () => {
-    return dispatch => fetch(`http://192.168.1.70:8888/api/servers`) // Redux Thunk handles these
+    return dispatch => fetch(`http://192.168.1.92:8888/api/servers`) // Redux Thunk handles these
         .then(res => res.json())
         .then(
             data => dispatch({ type: 'LOAD_DATA_SUCCESS', data }),
@@ -7,4 +7,9 @@ export const loadData = () => {
         );
 }
 
-
+export const updateData = update => {
+    return {
+        type: "UPDATE_DATA_SUCCESS",
+        update
+    }
+}

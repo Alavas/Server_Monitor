@@ -23,11 +23,20 @@ body {
   margin-right: auto;
   width: 60%; }
 
+.service {
+  margin-left: 50px; }
+
 .altbadge {
   float: right;
   margin-left: 5px !important; }
 
 .collapsible-body {
   padding: 0.75rem !important; }
+
+.icon-red {
+  color: red; }
+
+.icon-green {
+  color: green; }
 
 /*# sourceMappingURL=index.css.map */

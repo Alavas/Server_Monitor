@@ -28,7 +28,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 60%;
-    //font-size: 25px !important;
+}
+
+.service {
+  margin-left: 50px;
 }
 
 .altbadge {
@@ -38,4 +41,12 @@ body {
 
 .collapsible-body {
     padding: 0.75rem !important;
+}
+
+.icon-red {
+  color: red;
+}
+
+.icon-green {
+  color: green;
 }

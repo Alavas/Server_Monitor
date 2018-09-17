@@ -16,19 +16,25 @@ class Servers extends Component {
                     <ul className="collapsible">
                         {servers.map((x, index) => {
                             let server = data[x].HostName
+                            let svcQty = data[x].Services.length
+                            let svcRun = _.countBy(data[x].Services, 'Running').true || 0
+                            let allRunning = svcRun === svcQty
+                            let svcRunning = svcQty > 0 ? `${svcRun}/${svcQty}` : null
+                            let operational = data[x].Operational
                             let services = data[x].Services.map((service, index) => {
                                 return(
                                     <div key={index} className="collapsible-body">
-                                        <span>
+                                        <i className={service.Running ? 
+                                            "material-icons icon-green service": 
+                                            "material-icons icon-red service"}>
+                                            {service.Running ? "check_circle_outline" : "highlight_off"}
+                                        </i>
+                                        <span style={{marginLeft: "10px"}}>
                                             {service.Description}
                                         </span>
                                     </div>  
                                 )
                             })
-                            let svcQty = data[x].Services.length
-                            let svcRun = _.countBy(data[x].Services, 'Running').true || 0
-                            let allRunning = svcRun === svcQty
-                            let svcRunning = svcQty > 0 ? `${svcRun}/${svcQty}` : null
                             let hosts = data[x].Hosts.map((host, index) => {
                                 return(
                                     <span
@@ -50,7 +56,9 @@ class Servers extends Component {
                             return (
                                 <li key={index}>
                                     <div className="collapsible-header">
-                                        <i className="material-icons">desktop_windows</i>
+                                        <i className={operational ? "material-icons icon-green" : "material-icons icon-red"}>
+                                            desktop_windows
+                                        </i>
                                         {server}
                                         {hosts}
                                         {svcBadge}
