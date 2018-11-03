@@ -9,26 +9,25 @@ import thunk from 'redux-thunk'
 import registerServiceWorker from './registerServiceWorker'
 import './styles/index.css'
 
+//document.cookie = 'endpoint=192.168.1.70'
 /* eslint-disable no-underscore-dangle */
-const store = createStore(
-    serverReducer,
-    applyMiddleware(thunk)
-    )
-    /* eslint-enable */
-    
-var ws = new WebSocket('ws://192.168.1.92:8888')
+const store = createStore(serverReducer, applyMiddleware(thunk))
+/* eslint-enable */
 
-ws.onmessage = (message) => {
-    let payload = JSON.parse(message.data)
-    store.dispatch({
-            'type': payload.action,
-            'update': payload.data
-        })
+var ws = new WebSocket('ws://192.168.1.70:8888')
+
+ws.onmessage = message => {
+	let payload = JSON.parse(message.data)
+	store.dispatch({
+		type: payload.action,
+		update: payload.data
+	})
 }
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    document.getElementById('root'))
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
+)
 registerServiceWorker()
