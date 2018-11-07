@@ -22,7 +22,7 @@ export const serverReducer = (
 		case 'LOAD_DATA_FAILURE':
 			state = {
 				...state,
-				Servers: { Error: true },
+				Servers: { Error: action.err },
 				Success: false,
 				Error: true
 			}

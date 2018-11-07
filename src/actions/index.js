@@ -22,8 +22,11 @@ export const dataFailure = err => {
 	}
 }
 
-export const dataEndpoint = endpiont => {
-	return {
-		type: 'UPDATE_ENDPOINT'
-	}
+export const dataEndpoint = endpoint => (dispatch, getState) => {
+	dispatch({
+		type: 'UPDATE_ENDPOINT',
+		endpoint
+	})
+	const url = getState().Endpoint
+	dispatch(dataLoad(url))
 }

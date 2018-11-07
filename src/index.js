@@ -5,16 +5,22 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import { serverReducer } from './reducers'
 import thunk from 'redux-thunk'
+import logger from 'redux-logger'
 
 import registerServiceWorker from './registerServiceWorker'
 import './styles/index.css'
 
-//document.cookie = 'endpoint=192.168.1.70'
+//document.cookie = 'endpoint=192.168.1.70:8888'
 /* eslint-disable no-underscore-dangle */
-const store = createStore(serverReducer, applyMiddleware(thunk))
+const store = createStore(serverReducer, applyMiddleware(thunk, logger))
 /* eslint-enable */
 
+const handleWS = e => {
+	console.log(e)
+}
+
 var ws = new WebSocket('ws://192.168.1.70:8888')
+ws.onerror = handleWS
 
 ws.onmessage = message => {
 	let payload = JSON.parse(message.data)
