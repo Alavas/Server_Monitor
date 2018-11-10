@@ -1,7 +1,7 @@
 export const serverReducer = (
 	state = {
 		Endpoint: '',
-		Error: true,
+		Error: false,
 		ErrorMsg: '',
 		Servers: { Loading: true },
 		Success: false
@@ -17,7 +17,9 @@ export const serverReducer = (
 			state = {
 				...state,
 				Success: true,
-				Servers: action.data
+				Servers: action.data,
+				Error: false,
+				ErrorMsg: ''
 			}
 			break
 		case 'LOAD_DATA_FAILURE':

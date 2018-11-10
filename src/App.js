@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Servers from './components/Servers'
 import Footer from './components/Footer'
-import { dataLoad, dataEndpoint } from './actions'
+import { dataLoad, dataEndpoint, dataSample } from './actions'
 import { getCookie } from './utilities'
 
 class App extends Component {
@@ -54,6 +54,9 @@ const mapDispatchToProps = dispatch => {
 		},
 		dataEndpoint: endpoint => {
 			dispatch(dataEndpoint(endpoint))
+		},
+		dataSample: () => {
+			dispatch(dataSample())
 		}
 	}
 }

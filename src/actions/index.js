@@ -1,3 +1,5 @@
+const sample = require('../sample.json')
+
 export const dataLoad = endpoint => {
 	return dispatch =>
 		fetch(`http://${endpoint}/api/servers`)
@@ -6,6 +8,13 @@ export const dataLoad = endpoint => {
 				data => dispatch(dataSuccess(data)),
 				err => dispatch(dataFailure(err))
 			)
+}
+
+export const dataSample = () => {
+	return {
+		type: 'LOAD_DATA_SUCCESS',
+		data: sample
+	}
 }
 
 export const dataSuccess = data => {
