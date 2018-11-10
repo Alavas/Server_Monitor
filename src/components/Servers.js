@@ -1,10 +1,15 @@
 import React from 'react'
 import ServiceBadge from './ServiceBadge'
+import ErrorPopup from './ErrorPopup'
 import _ from 'lodash'
 
 const Servers = props => {
 	if (props.error) {
-		return <div>Error!</div>
+		return (
+			<div className="errorpopup">
+				<ErrorPopup errormsg={props.errormsg} />
+			</div>
+		)
 	} else if (props.loading) {
 		let data = props.servers
 		let servers = Object.keys(data)

@@ -36,6 +36,7 @@ class App extends Component {
 					error={this.props.error}
 					loading={this.props.loading}
 					servers={this.props.servers}
+					errormsg={this.props.errormsg}
 				/>
 				<Footer
 					endpoint={this.state.endpoint}
@@ -63,7 +64,8 @@ const mapStateToProps = state => {
 		endpoint: state.Endpoint,
 		loading: state.Success,
 		servers: state.Servers,
-		error: state.Error
+		error: state.Error,
+		errormsg: state.ErrorMsg
 	}
 }
 

@@ -73,6 +73,32 @@ body {
 	line-height: 60px;
 }
 
+.errorpopup {
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+}
+
+.errorcard {
+	background-color: #afafaf;
+}
+
+.card-title {
+	font-size: 30px !important;
+	font-weight: bold !important;
+}
+
+.card-action {
+	border-top: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+.save-button {
+	margin-top: 10px;
+	color: #afafaf;
+	font-weight: bold;
+}
+
 @media screen and (min-width: 1000px) {
 	.serverlist {
 		margin-top: 60px;
