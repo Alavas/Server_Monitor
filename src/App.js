@@ -12,6 +12,7 @@ class App extends Component {
 			endpoint: ''
 		}
 		this.handleChange = this.handleChange.bind(this)
+		this.updateEndpoint = this.updateEndpoint.bind(this)
 	}
 
 	componentWillMount() {
@@ -26,7 +27,11 @@ class App extends Component {
 		this.setState({
 			endpoint: e.target.value
 		})
-		console.log(e.target.value)
+	}
+
+	updateEndpoint() {
+		this.props.dataEndpoint(this.state.endpoint)
+		document.cookie = `endpoint=${this.state.endpoint}`
 	}
 
 	render() {
@@ -37,10 +42,12 @@ class App extends Component {
 					loading={this.props.loading}
 					servers={this.props.servers}
 					errormsg={this.props.errormsg}
+					sample={this.props.dataSample}
 				/>
 				<Footer
 					endpoint={this.state.endpoint}
 					handleChange={this.handleChange}
+					updateEndpoint={this.updateEndpoint}
 				/>
 			</div>
 		)
@@ -62,7 +69,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 const mapStateToProps = state => {
-	console.log(state)
 	return {
 		endpoint: state.Endpoint,
 		loading: state.Success,

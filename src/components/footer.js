@@ -6,7 +6,10 @@ const Footer = props => {
 			<div className="row">
 				<div className="col">
 					{/*eslint-disable-next-line*/}
-					<a className="save-button waves-effect black waves-light btn">
+					<a
+						onClick={props.updateEndpoint}
+						className="save-button waves-effect black waves-light btn"
+					>
 						<i className="material-icons left">save</i>
 						Save
 					</a>

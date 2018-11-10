@@ -10,7 +10,6 @@ import logger from 'redux-logger'
 import registerServiceWorker from './registerServiceWorker'
 import './styles/index.css'
 
-//document.cookie = 'endpoint=192.168.1.70:8888'
 /* eslint-disable no-underscore-dangle */
 const store = createStore(serverReducer, applyMiddleware(thunk, logger))
 /* eslint-enable */

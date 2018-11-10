@@ -9,7 +9,10 @@ const ErrorPopup = props => {
 			</div>
 			<div className="card-action black-text">
 				{/*eslint-disable-next-line*/}
-				<a className="sample-button waves-effect black waves-light btn">
+				<a
+					onClick={props.sample}
+					className="sample-button waves-effect black waves-light btn"
+				>
 					View sample data?
 				</a>
 			</div>

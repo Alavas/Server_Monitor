@@ -7,7 +7,7 @@ const Servers = props => {
 	if (props.error) {
 		return (
 			<div className="errorpopup">
-				<ErrorPopup errormsg={props.errormsg} />
+				<ErrorPopup errormsg={props.errormsg} sample={props.sample} />
 			</div>
 		)
 	} else if (props.loading) {
