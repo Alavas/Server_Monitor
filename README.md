@@ -1,4 +1,6 @@
-Monitor for server and running services on demo machines. Expects to be fed a JSON file in the following format:
+Monitor for server and running services on demo machines. Please see the associated server side API -> https://github.com/Alavas/Server_Monitor_API.
+
+Expects to be fed a JSON file in the following format:
 
 ```json
 {
