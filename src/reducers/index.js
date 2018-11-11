@@ -34,7 +34,10 @@ export const serverReducer = (
 		case 'UPDATE_ENDPOINT':
 			state = {
 				...state,
-				Endpoint: action.endpoint
+				Success: false,
+				Endpoint: action.endpoint,
+				Error: false,
+				ErrorMsg: ''
 			}
 			break
 		case 'UPDATE_DATA_SERVICES':
