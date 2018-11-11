@@ -18,6 +18,7 @@ const Footer = props => {
 					<input
 						value={props.endpoint}
 						onChange={props.handleChange}
+						onKeyUp={props.enterKey}
 						type="text"
 					/>
 					<label

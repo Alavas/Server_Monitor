@@ -14,6 +14,7 @@ class App extends Component {
 		this.handleChange = this.handleChange.bind(this)
 		this.updateEndpoint = this.updateEndpoint.bind(this)
 		this.sampleEndpoint = this.sampleEndpoint.bind(this)
+		this.enterKey = this.enterKey.bind(this)
 	}
 
 	componentWillMount() {
@@ -33,6 +34,13 @@ class App extends Component {
 	updateEndpoint() {
 		this.props.dataEndpoint(this.state.endpoint)
 		document.cookie = `endpoint=${this.state.endpoint}`
+	}
+
+	enterKey(event) {
+		var code = event.keyCode || event.which
+		if (code === 13) {
+			this.updateEndpoint()
+		}
 	}
 
 	sampleEndpoint() {
@@ -58,6 +66,7 @@ class App extends Component {
 					endpoint={this.state.endpoint}
 					handleChange={this.handleChange}
 					updateEndpoint={this.updateEndpoint}
+					enterKey={this.enterKey}
 				/>
 			</div>
 		)

@@ -1,6 +1,8 @@
-Monitor for server and running services on demo machines. Please see the associated server side API -> https://github.com/Alavas/Server_Monitor_API.
+Monitor for server and running services on demo machines. Upon initial connection to the API a JSON is retrieved. After this a WebSocket connection is established and all further changes are receive through this. Please see the associated server side API -> https://github.com/Alavas/Server_Monitor_API.
 
-Expects to be fed a JSON file in the following format:
+> Todo - Apply endpoint to WebSocket connection.
+
+Expects to be fed an initial JSON file in the following format:
 
 ```json
 {
