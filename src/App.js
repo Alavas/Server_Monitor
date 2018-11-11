@@ -13,6 +13,7 @@ class App extends Component {
 		}
 		this.handleChange = this.handleChange.bind(this)
 		this.updateEndpoint = this.updateEndpoint.bind(this)
+		this.sampleEndpoint = this.sampleEndpoint.bind(this)
 	}
 
 	componentWillMount() {
@@ -34,6 +35,15 @@ class App extends Component {
 		document.cookie = `endpoint=${this.state.endpoint}`
 	}
 
+	sampleEndpoint() {
+		this.setState(
+			{
+				endpoint: 'test-server.test-domain.com'
+			},
+			() => this.props.dataSample()
+		)
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -42,7 +52,7 @@ class App extends Component {
 					loaded={this.props.loaded}
 					servers={this.props.servers}
 					errormsg={this.props.errormsg}
-					sample={this.props.dataSample}
+					sample={this.sampleEndpoint}
 				/>
 				<Footer
 					endpoint={this.state.endpoint}
