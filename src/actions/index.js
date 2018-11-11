@@ -1,4 +1,4 @@
-const sample = require('../sample.json')
+import sample from '../sample.json'
 
 export const dataLoad = endpoint => {
 	return dispatch =>
@@ -10,11 +10,12 @@ export const dataLoad = endpoint => {
 			)
 }
 
-export const dataSample = () => {
-	return {
-		type: 'LOAD_DATA_SUCCESS',
-		data: sample
-	}
+export const dataSample = () => dispatch => {
+	dispatch({
+		type: 'UPDATE_ENDPOINT',
+		endpoint: 'test-server.test-domain.com'
+	})
+	dispatch(dataSuccess(sample))
 }
 
 export const dataSuccess = data => {
