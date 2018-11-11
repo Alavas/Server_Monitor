@@ -39,7 +39,7 @@ class App extends Component {
 			<div className="App">
 				<Servers
 					error={this.props.error}
-					loading={this.props.loading}
+					loaded={this.props.loaded}
 					servers={this.props.servers}
 					errormsg={this.props.errormsg}
 					sample={this.props.dataSample}
@@ -71,7 +71,7 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
 	return {
 		endpoint: state.Endpoint,
-		loading: state.Success,
+		loaded: state.Success,
 		servers: state.Servers,
 		error: state.Error,
 		errormsg: state.ErrorMsg
