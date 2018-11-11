@@ -84,15 +84,6 @@ body {
 	background-color: #afafaf;
 }
 
-.card-title {
-	font-size: 30px !important;
-	font-weight: bold !important;
-}
-
-.card-action {
-	border-top: 1px solid rgba(0, 0, 0, 0.3) !important;
-}
-
 .save-button {
 	margin-top: 10px;
 	color: #afafaf;
@@ -103,6 +94,20 @@ body {
 	width: 250px;
 	color: #afafaf;
 	font-weight: bold;
+}
+
+//Override styles.
+.card-title {
+	font-size: 30px !important;
+	font-weight: bold !important;
+}
+
+.card-action {
+	border-top: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+.row {
+	margin-bottom: 0px !important;
 }
 
 @media screen and (min-width: 1000px) {
