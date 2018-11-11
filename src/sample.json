@@ -1,7 +1,7 @@
 {
-	"ServerName": {
+	"Server01": {
 		"Operational": false,
-		"HostName": "SERVERNAME.YOURDOMAIN.COM",
+		"HostName": "SERVER01.YOURDOMAIN.COM",
 		"Purpose": "Example Machine",
 		"Hosts": [
 			{
@@ -25,6 +25,32 @@
 				"Name": "MSSQL$SQLEXPRESS",
 				"Description": "SQL Server",
 				"Running": false,
+				"State": "Stopped"
+			},
+			{
+				"Name": "W32Time",
+				"Description": "Windows Time",
+				"Running": true,
+				"State": "Running"
+			}
+		]
+	},
+	"Server02": {
+		"Operational": true,
+		"HostName": "SERVER02.YOURDOMAIN.COM",
+		"Purpose": "Example Machine",
+		"Hosts": [
+			{
+				"Name": "Server",
+				"IP": "192.168.1.51",
+				"Online": true
+			}
+		],
+		"Services": [
+			{
+				"Name": "MSSQL$SQLEXPRESS",
+				"Description": "SQL Server",
+				"Running": true,
 				"State": "Stopped"
 			},
 			{
