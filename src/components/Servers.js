@@ -10,7 +10,7 @@ const Servers = props => {
 				<ErrorPopup errormsg={props.errormsg} sample={props.sample} />
 			</div>
 		)
-	} else if (props.loading) {
+	} else if (props.loaded) {
 		let data = props.servers
 		let servers = Object.keys(data)
 		return (
@@ -25,12 +25,12 @@ const Servers = props => {
 						let operational = data[x].Operational
 						let services = data[x].Services.map((service, index) => {
 							return (
-								<div key={index} className="collapsible-body">
+								<div key={index} className="collapsible-body row">
 									<i
 										className={
 											service.Running
-												? 'material-icons icon-green service'
-												: 'material-icons icon-red service'
+												? 'material-icons icon-green service col s1 offset-s1'
+												: 'material-icons icon-red service col s1 offset-s1'
 										}
 									>
 										{service.Running
