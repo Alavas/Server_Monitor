@@ -54,7 +54,8 @@ class App extends Component {
 
 	render() {
 		return (
-			<div className="App">
+			<div className="app">
+				<p style={{ margin: '0px', visibility: 'hidden' }}>?</p>
 				<Servers
 					error={this.props.error}
 					loaded={this.props.loaded}
